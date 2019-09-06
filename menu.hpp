@@ -15,6 +15,6 @@ class Menu
 		double validateDoub(std::string input);
 		std::string validateName(std::string input);
 		int validateAllInt(std::string input);
-		int randomInt(int min, int max);
+		int randomInt(int min, int max) const;
 };
 #endif

@@ -227,8 +227,13 @@ int Menu::validateAllInt(string input)
 }
 
 //Fuction that returns a random number between the min and max that is passed to the function. https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution
-int Menu::randomInt(int min, int max)
+int Menu::randomInt(int min, int max) const
 {
+	if (min >= max) {
+          int temp = min;
+          min = max;
+          max = temp;
+        }
 	std::random_device seed;
 	std::mt19937 gen(seed());
 	std::uniform_int_distribution<int> randInt(min, max);
